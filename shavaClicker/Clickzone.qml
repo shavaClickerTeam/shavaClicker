@@ -54,8 +54,9 @@ Rectangle {
             id: text1
             width: 200
             height: 50
-            text: qsTr("Количество шаверм:")
-            font.bold: false
+            text: qsTr("Шаверм:")
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
             fontSizeMode: Text.Fit
             font.pixelSize: 25
 
@@ -82,7 +83,8 @@ Rectangle {
             width: 200
             height: 50
             text: qsTr("Шаверм в секунду:")
-            font.bold: false
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
             fontSizeMode: Text.Fit
             font.pixelSize: 25
 

@@ -9,5 +9,9 @@
         <file>Toolbar.qml</file>
         <file>Clickzone.qml</file>
         <file>Upgradezone.qml</file>
+        <file>shava_background2.png</file>
+        <file>1.png</file>
+        <file>2.png</file>
+        <file>3.png</file>
     </qresource>
 </RCC>
