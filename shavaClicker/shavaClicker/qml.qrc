@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>background.jpg</file>
-        <file>travolta.gif</file>
-        <file>shava.png</file>
-        <file>left_background.png</file>
-    </qresource>
-</RCC>
