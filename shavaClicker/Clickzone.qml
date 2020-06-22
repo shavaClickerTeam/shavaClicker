@@ -21,6 +21,35 @@ Rectangle {
         height: 723
         source: "shava_background1.png"
 
+        Text {
+            id: text3
+            x: 33
+            y: 635
+            width: 200
+            height: 50
+            text: qsTr("Шаверм по клику:")
+            font.bold: true
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 20
+
+            Text {
+                id: textSPC
+                x: 0
+                y: 25
+                width: 200
+                height: 25
+                text: uz.spc
+                horizontalAlignment: Text.AlignHCenter
+                fontSizeMode: Text.Fit
+                font.italic: false
+                font.family: "Tahoma"
+                font.strikeout: false
+                font.bold: true
+                font.underline: false
+                font.pixelSize: 25
+            }
+        }
+
     }
 
     Image {

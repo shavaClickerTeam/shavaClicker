@@ -7,7 +7,7 @@ Rectangle {
     width: 282
     height: 720
     color: "pink"
-    property int k: 1
+    property int spc: 1
 
     signal changeK(int i)
 

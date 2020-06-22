@@ -9,12 +9,12 @@ Rectangle{
     height: 720
 
     function count (){
-        var n = helper.count(cz.sum, uz.k)
-        cz.sum = n
+        var sum = helper.count(cz.sum, uz.spc)
+        cz.sum = sum
 }
     function changeK(i){
-        var k = helper.changeK(uz.k, i)
-        uz.k = k
+        var spc = helper.changeK(uz.spc, i)
+        uz.spc = spc
     }
 
     Image {
