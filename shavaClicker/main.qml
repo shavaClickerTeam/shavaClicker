@@ -19,8 +19,6 @@ Window {
     title: qsTr("shavaClicker")
 
 
-    RowLayout{
-        id:rl
 
         Gameplay{
             id: gameplay
@@ -28,15 +26,19 @@ Window {
 
         Toolbar{
             id: toolbar
+            x: 436
+            y: 0
+            onQuit: Qt.quit()
+            onNewgame: gameplay.newgame()
         }
     }
 
-}
+
 
 
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.6600000262260437}
+    D{i:0;formeditorZoom:0.5}
 }
 ##^##*/

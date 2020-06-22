@@ -25,18 +25,30 @@ int Helper::changeK(double spc, double s){
     return spc;
 }
 
-int Helper::buy(double sum, double cost){
-    sum = sum - cost;
-    return sum;
+QVector<double> Helper::buy(QVector<double> param){
+//    sum = sum - cost;
+//    recost = cost*1.01;
+//    return sum;
+    param[0] = param[0] - param[1];
+    param[2] = param[1]*1.01;
+    qDebug("Buyed");
+    qDebug() << param[0];
+    qDebug() << param[1];
+    qDebug() << param[2];
+    return param;
 }
 
 int Helper::changeSps(double sps, double l){
     if (l == 1)
         sps = sps + 1;
     if (l == 2)
-        sps = sps + 10;
+        sps = sps + 25;
     if (l == 3)
-        sps = sps*1.2;
+        sps = sps + 500;
 
     return sps;
+}
+
+void Helper::qdebug(QString str){
+    qDebug() << str;
 }

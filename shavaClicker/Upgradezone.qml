@@ -12,6 +12,32 @@ Rectangle {
     signal changeK(int k)
     signal buy(double cost, string id)
     signal changeSps(int l)
+    function newgame(){
+        up1.num = 0
+        up2.num = 0
+        up3.num = 0
+    }
+    function recost(id, newcost){
+        if (up1.id === id){
+            up1.cost = newcost
+        }
+        if (up2.id === id){
+            up2.cost = newcost
+        }
+        if (up3.id === id){
+            up3.cost = newcost
+        }
+        if (clickup1.id === id){
+            clickup1.cost = newcost
+        }
+        if (clickup2.id === id){
+            clickup2.cost = newcost
+        }
+        if (clickup3.id === id){
+            clickup3.cost = newcost
+        }
+
+    }
 
     Image {
         id: image
@@ -41,6 +67,7 @@ Rectangle {
                 height: 54
                 property double cost: 100
                 property int num: 0
+                property string id: "up1"
                 text: qsTr("")
                 Image {
                     id: name
@@ -51,7 +78,7 @@ Rectangle {
                 }
                 onClicked: {
                     if (cz.sum >= cost){
-                        buy(cost, up1)
+                        buy(cost, id)
                         changeSps(1)
                         up1.num++
                }
@@ -71,7 +98,7 @@ Rectangle {
                     y: 0
                     width: 185
                     height: 75
-                    text: qsTr("Нанять 1 шавермастера\nCтоимость "+up1.cost+"\nГотовит 1 шаверму в секунду\n\nВсего шавермастеров: " + up1.num)
+                    text: qsTr("Нанять 1 шавермастера\nCтоимость "+up1.cost.toFixed()+"\nГотовит 1 шаверму в секунду\n\nВсего шавермастеров: " + up1.num)
                     font.pixelSize: 12
                 }
             }
@@ -88,6 +115,7 @@ Rectangle {
                 height: 54
                 property double cost: 1000
                 property int num: 0
+                property string id: "up2"
                 text: qsTr("")
                 Image {
                     width: 90
@@ -97,7 +125,7 @@ Rectangle {
                 }
                 onClicked: {
                     if (cz.sum >= cost){
-                        buy(cost, up2)
+                        buy(cost, id)
                         changeSps(2)
                         up2.num++
                }
@@ -116,7 +144,7 @@ Rectangle {
                     y: 0
                     width: 185
                     height: 75
-                    text: qsTr("Открыть закусочную\nСтоимость "+up2.cost+"\nПроизводит 25 шаверм в \nсекунду\nВсего закусочных: "+up2.num)
+                    text: qsTr("Открыть закусочную\nСтоимость "+up2.cost.toFixed()+"\nПроизводит 25 шаверм в \nсекунду\nВсего закусочных: "+up2.num)
                     font.pixelSize: 12
                 }
             }
@@ -134,6 +162,7 @@ Rectangle {
                 height: 56
                 property double cost: 10000
                 property int num: 0
+                property string id: "up3"
                 text: ""
 
                 Image {
@@ -145,7 +174,7 @@ Rectangle {
 
                 onClicked: {
                     if (cz.sum >= cost){
-                        buy(cost, up3)
+                        buy(cost, id)
                         changeSps(3)
                         up3.num++
                    }
@@ -165,7 +194,7 @@ Rectangle {
                     y: 0
                     width: 185
                     height: 75
-                    text: qsTr("Открыть портал в мир шавермы\nСтоимость "+up3.cost+"\nМатериализует 500 шаверм в \nсекунду\nВсего порталов: "+up3.num)
+                    text: qsTr("Открыть портал в мир шавермы\nСтоимость "+up3.cost.toFixed()+"\nМатериализует 500 шаверм в \nсекунду\nВсего порталов: "+up3.num)
                     font.pixelSize: 12
                 }
             }
@@ -182,13 +211,14 @@ Rectangle {
         Button {
             id: clickup1
             property double cost: 100
+            property string id: "clickup1"
             width: 91
             height: 65
-            text: qsTr("Цена:\n" + cost)
+            text: qsTr("Цена:\n" + cost.toFixed())
             onClicked: {
                 if (cz.sum >= cost){
                     changeK(1)
-                    buy(cost, clickup1)
+                    buy(cost, id)
            }
         }
       }
@@ -196,13 +226,14 @@ Rectangle {
         Button {
             id: clickup2
             property double cost: 1000
+            property string id: "clickup2"
             width: 91
             height: 65
-            text: qsTr("Цена:\n" + cost)
+            text: qsTr("Цена:\n" + cost.toFixed())
             onClicked: {
                 if (cz.sum >= cost){
                     changeK(2)
-                    buy(cost, clickup2)
+                    buy(cost, id)
                 }
             }
         }
@@ -210,13 +241,14 @@ Rectangle {
         Button {
             id: clickup3
             property double cost: 10000
+            property string id: "clickup3"
             width: 91
             height: 65
-            text: qsTr("Цена:\n" + cost)
+            text: qsTr("Цена:\n" + cost.toFixed())
             onClicked: {
                 if (cz.sum >= cost){
                     changeK(3)
-                    buy(cost, clickup3)
+                    buy(cost, id)
                 }
                }
          }

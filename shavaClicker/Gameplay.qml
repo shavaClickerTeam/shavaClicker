@@ -8,6 +8,18 @@ Rectangle{
     width: 1280
     height: 720
 
+
+    function qdebug(id){
+        helper.qdebug(id)
+    }
+
+    function newgame(){
+        cz.sum = 0
+        cz.spc = 1
+        uz.sps = 0
+        uz.newgame()
+    }
+
     function count(){
         var sum = helper.count(cz.sum, cz.spc)
         cz.sum = sum
@@ -17,16 +29,19 @@ Rectangle{
         cz.spc = spc
     }
     function buy(cost, id){
-        var sum = helper.buy(cz.sum, cost )
-        cz.sum = sum
-// реализовать по id изменение цены
+        var recost = cost
+        var param = [cz.sum, cost, recost]
+        param = helper.buy(param)
+        cz.sum = param[0]
+        uz.recost(id, param[2])
+        gp.qdebug(id)
     }
     function changeSps(l){
         var sps = helper.changeSps(uz.sps, l)
         uz.sps = sps
 }
     function recount(){
-        cz.sum = cz.sum + uz.sps
+        cz.sum = cz.sum + uz.sps/10
     }
 
 
@@ -74,7 +89,7 @@ Rectangle{
     }
     Timer {
         id: timer
-        interval: 1000
+        interval: 100
         running: true
         repeat: true
         onTriggered: {

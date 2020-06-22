@@ -14,8 +14,9 @@ signals:
 public slots:
     int count(double sum, double spc);
     int changeK(double spc, double k);
-    int buy(double sum, double cost);
+    QVector<double> buy(QVector<double> param);
     int changeSps(double sps, double l);
+    void qdebug(QString str);
 };
 
 #endif // HELPER_H

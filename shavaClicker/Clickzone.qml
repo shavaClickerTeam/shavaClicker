@@ -54,7 +54,7 @@ Rectangle {
             id: text1
             width: 200
             height: 50
-            text: qsTr("Шаверм:\n" + sum)
+            text: qsTr("Шаверм:\n" + sum.toFixed())
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             fontSizeMode: Text.Fit
@@ -91,8 +91,4 @@ Rectangle {
 
 
 
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:0.75}
-}
-##^##*/
+
