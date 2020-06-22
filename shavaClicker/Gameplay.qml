@@ -25,6 +25,11 @@ Rectangle{
         var sps = helper.changeSps(uz.sps, l)
         uz.sps = sps
 }
+    function recount(){
+        cz.sum = cz.sum + uz.sps
+    }
+
+
     Image {
         id: background
         x: 0
@@ -65,6 +70,16 @@ Rectangle{
         onChangeK: gp.changeK(k)
         onBuy: gp.buy(cost, id)
         onChangeSps: gp.changeSps(l)
+
+    }
+    Timer {
+        id: timer
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: {
+            gp.recount()
+        }
     }
 
 }

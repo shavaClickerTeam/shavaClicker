@@ -53,7 +53,7 @@ Rectangle {
                     if (cz.sum >= cost){
                         buy(cost, up1)
                         changeSps(1)
-//                        up1.num = up1.num + 1
+                        up1.num++
                }
              }
             }
@@ -99,7 +99,7 @@ Rectangle {
                     if (cz.sum >= cost){
                         buy(cost, up2)
                         changeSps(2)
-//                        up2.num = up2.num + 1
+                        up2.num++
                }
             }
        }
@@ -147,7 +147,7 @@ Rectangle {
                     if (cz.sum >= cost){
                         buy(cost, up3)
                         changeSps(3)
- //                       up3.num = up3.num + 1
+                        up3.num++
                    }
                 }
             }
