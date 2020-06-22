@@ -12,7 +12,8 @@ public:
 signals:
 
 public slots:
-    int count(int n);
+    int count(int n, int k);
+    int changeK(int n, int s);
 };
 
 #endif // HELPER_H

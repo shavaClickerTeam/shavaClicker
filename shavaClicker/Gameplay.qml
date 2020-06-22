@@ -8,10 +8,14 @@ Rectangle{
     width: 1280
     height: 720
 
-    function count(){
-    var n = helper.count(cz.sum)
-    cz.sum = n
+    function count (){
+        var n = helper.count(cz.sum, uz.k)
+        cz.sum = n
 }
+    function changeK(i){
+        var k = helper.changeK(uz.k, i)
+        uz.k = k
+    }
 
     Image {
         id: background
@@ -50,6 +54,7 @@ Rectangle{
         anchors.topMargin: 0
         anchors.right: parent.right
         anchors.rightMargin: 0
+        onChangeK: gp.changeK(i)
     }
 
 }
