@@ -10,6 +10,7 @@ Rectangle {
     color: "pink"
 
     property int sum: 0
+    property int sps: 0
     signal count(int sum)
 
     Image{
@@ -34,14 +35,78 @@ Rectangle {
             x: 43
             width: 127
             height: 210
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                onClicked: {
-                    count(sum)
-                }
-         }
+            anchors.top: parent.top
+            anchors.topMargin: 0
+            onClicked: {
+                count(sum)
+            }
+        }
+    }
+
+    Column {
+        id: column
+        x: 33
+        y: 0
+        width: 200
+        height: 112
+
+        Text {
+            id: text1
+            width: 200
+            height: 50
+            text: qsTr("Количество шаверм:")
+            font.bold: false
+            fontSizeMode: Text.Fit
+            font.pixelSize: 25
+
+            Text {
+                id: textSum
+                x: 0
+                y: 25
+                width: 200
+                height: 25
+                text: sum
+                font.strikeout: false
+                font.underline: false
+                font.italic: false
+                font.bold: true
+                font.family: "Tahoma"
+                horizontalAlignment: Text.AlignHCenter
+                fontSizeMode: Text.Fit
+                font.pixelSize: 25
+            }
         }
 
+        Text {
+            id: text2
+            width: 200
+            height: 50
+            text: qsTr("Шаверм в секунду:")
+            font.bold: false
+            fontSizeMode: Text.Fit
+            font.pixelSize: 25
+
+            Text {
+                id: textSPS
+                x: 0
+                y: 25
+                width: 200
+                height: 25
+                text: sps
+                font.strikeout: false
+                font.underline: false
+                font.italic: false
+                font.bold: true
+                font.family: "Tahoma"
+                horizontalAlignment: Text.AlignHCenter
+                fontSizeMode: Text.Fit
+                font.pixelSize: 25
+            }
+        }
     }
+
+}
+
+
 
 
