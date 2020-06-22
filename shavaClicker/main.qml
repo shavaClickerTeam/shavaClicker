@@ -1,5 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
+import QtQuick.Controls 2.5
+import QtQuick.Layouts 1.3
 
 Window {
 
@@ -17,58 +19,19 @@ Window {
     title: qsTr("shavaClicker")
 
 
+    RowLayout{
+        id:rl
 
-
-
-    Image {
-        id: background
-        x: 0
-        y: 0
-        width: 1280
-        height: 720
-        source: "background.jpg"
-        fillMode: Image.PreserveAspectFit
-
-    }
-    AnimatedImage {
-        id: gif
-        x: 498
-        y: 347
-        width: 358
-        height: 373
-        speed: 0.8
-        source: "travolta.gif"
-    }
-
-    Rectangle {
-        id: rectangle
-        x: 0
-        y: 0
-        width: 282
-        height: 720
-        color: "pink"
-        Image{
-            x: 0
-            y: 0
-            width: 300
-            height: 723
-            source: "shava_background1.png"
-
+        Gameplay{
+            id: gameplay
         }
 
-        Image {
-            id: shava
-            x: 33
-            y: 257
-            width: 216
-            height: 209
-            fillMode: Image.PreserveAspectFit
-            source: "shava.png"
+        Toolbar{
+            id: toolbar
         }
     }
+
 }
-
-
 
 
 
