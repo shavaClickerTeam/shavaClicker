@@ -12,8 +12,10 @@ public:
 signals:
 
 public slots:
-    int count(int n, int k);
-    int changeK(int n, int s);
+    int count(double sum, double spc);
+    int changeK(double spc, double k);
+    int buy(double sum, double cost);
+    int changeSps(double sps, double l);
 };
 
 #endif // HELPER_H

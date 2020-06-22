@@ -9,9 +9,9 @@ Rectangle {
     height: 720
     color: "pink"
 
-    property int sum: 0
-    property int sps: 0
-    signal count(int sum)
+    property double sum: 10000
+    property double spc: 1
+    signal count(double sum)
 
     Image{
         id: bg1
@@ -20,35 +20,6 @@ Rectangle {
         width: 300
         height: 723
         source: "shava_background1.png"
-
-        Text {
-            id: text3
-            x: 33
-            y: 635
-            width: 200
-            height: 50
-            text: qsTr("Шаверм по клику:")
-            font.bold: true
-            horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 20
-
-            Text {
-                id: textSPC
-                x: 0
-                y: 25
-                width: 200
-                height: 25
-                text: uz.spc
-                horizontalAlignment: Text.AlignHCenter
-                fontSizeMode: Text.Fit
-                font.italic: false
-                font.family: "Tahoma"
-                font.strikeout: false
-                font.bold: true
-                font.underline: false
-                font.pixelSize: 25
-            }
-        }
 
     }
 
@@ -83,57 +54,35 @@ Rectangle {
             id: text1
             width: 200
             height: 50
-            text: qsTr("Шаверм:")
+            text: qsTr("Шаверм:\n" + sum)
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             fontSizeMode: Text.Fit
             font.pixelSize: 25
-
-            Text {
-                id: textSum
-                x: 0
-                y: 25
-                width: 200
-                height: 25
-                text: sum
-                font.strikeout: false
-                font.underline: false
-                font.italic: false
-                font.bold: true
-                font.family: "Tahoma"
-                horizontalAlignment: Text.AlignHCenter
-                fontSizeMode: Text.Fit
-                font.pixelSize: 25
-            }
         }
 
         Text {
             id: text2
             width: 200
             height: 50
-            text: qsTr("Шаверм в секунду:")
+            text: qsTr("Шаверм в секунду:\n" + uz.sps)
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             fontSizeMode: Text.Fit
             font.pixelSize: 25
-
-            Text {
-                id: textSPS
-                x: 0
-                y: 25
-                width: 200
-                height: 25
-                text: sps
-                font.strikeout: false
-                font.underline: false
-                font.italic: false
-                font.bold: true
-                font.family: "Tahoma"
-                horizontalAlignment: Text.AlignHCenter
-                fontSizeMode: Text.Fit
-                font.pixelSize: 25
-            }
         }
+    }
+
+    Text {
+        id: text3
+        x: 33
+        y: 650
+        width: 200
+        height: 50
+        text: qsTr("Шаверм по клику:\n" + spc)
+        font.bold: true
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 20
     }
 
 }
@@ -141,3 +90,9 @@ Rectangle {
 
 
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.75}
+}
+##^##*/

@@ -8,15 +8,23 @@ Rectangle{
     width: 1280
     height: 720
 
-    function count (){
-        var sum = helper.count(cz.sum, uz.spc)
+    function count(){
+        var sum = helper.count(cz.sum, cz.spc)
         cz.sum = sum
 }
-    function changeK(i){
-        var spc = helper.changeK(uz.spc, i)
-        uz.spc = spc
+    function changeK(k){
+        var spc = helper.changeK(cz.spc, k)
+        cz.spc = spc
     }
-
+    function buy(cost, id){
+        var sum = helper.buy(cz.sum, cost )
+        cz.sum = sum
+// реализовать по id изменение цены
+    }
+    function changeSps(l){
+        var sps = helper.changeSps(uz.sps, l)
+        uz.sps = sps
+}
     Image {
         id: background
         x: 0
@@ -54,7 +62,9 @@ Rectangle{
         anchors.topMargin: 0
         anchors.right: parent.right
         anchors.rightMargin: 0
-        onChangeK: gp.changeK(i)
+        onChangeK: gp.changeK(k)
+        onBuy: gp.buy(cost, id)
+        onChangeSps: gp.changeSps(l)
     }
 
 }
