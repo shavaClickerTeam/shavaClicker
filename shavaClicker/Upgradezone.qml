@@ -16,6 +16,12 @@ Rectangle {
         up1.num = 0
         up2.num = 0
         up3.num = 0
+        up1.cost = 100
+        up2.cost = 1000
+        up3.cost = 10000
+        clickup1.cost = 100
+        clickup2.cost = 1000
+        clickup3.cost = 10000
     }
     function recost(id, newcost){
         if (up1.id === id){
